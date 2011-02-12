@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Mylyn Test
+Bundle-SymbolicName: test.tycho-mylyn-failure;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Require-Bundle: org.eclipse.mylyn.discovery.ui;bundle-version="3.4.0"

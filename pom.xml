@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+	<groupId>test</groupId>
+	<artifactId>tycho-mylyn-failure</artifactId>
+	<packaging>eclipse-plugin</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>Test build to show Tycho builds failing with a Mylyn dependency.</name>
+
+
+	<properties>
+		<tychoVersion>0.11.0-SNAPSHOT</tychoVersion>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tychoVersion}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tychoVersion}</version>
+				<configuration>
+					<resolver>p2</resolver>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>sonatype-forge</id>
+			<name>Sonatype Forge Site</name>
+			<url>https://repository.sonatype.org/content/groups/forge/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<repositories>
+		<repository>
+			<id>eclipse 361</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/eclipse/updates/3.6</url>
+		</repository>
+		<repository>
+			<id>helios</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/helios/</url>
+		</repository>
+	</repositories>
+	
+</project>
